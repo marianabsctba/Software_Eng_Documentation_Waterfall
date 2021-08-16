@@ -1,0 +1,52 @@
+﻿@model Domain.Model.Entities.Donation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Doações</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DonationName" class="control-label">Nome da doação</label>
+                <input asp-for="DonationName" class="form-control" />
+                <span asp-validation-for="DonationName" class="text-danger">Nome da doação</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Breve descrição</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger">Breve descrição</span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HaveCourier" /> @Html.DisplayNameFor(model => model.HaveCourier)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label">Quantidade</label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger">Quantidade</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfRegister" class="control-label">Data de Registro</label>
+                <input asp-for="DateOfRegister" class="form-control" />
+                <span asp-validation-for="DateOfRegister" class="text-danger">Data de Registro</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar à lista</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

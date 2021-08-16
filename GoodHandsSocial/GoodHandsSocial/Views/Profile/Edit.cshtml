@@ -1,0 +1,173 @@
+﻿@model Domain.Model.Entities.Profile
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="mdk-header-layout__content top-navbar mdk-header-layout__content--scrollable h-100">
+    <!-- main content -->
+    <div class="py-4 mb-3 bg-white border-bottom">
+        <div class="container-fluid container-account">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="media media-user-info align-items-center">
+                        <img src="~/hometheme/assets/images/avatars/person-3.jpg" class="img-fluid rounded-circle mr-2" width="60" alt="">
+                        <div class="media-body lh-1">
+                            <p class="h4 m-0"> </p>
+                            <p class="text-muted mb-0">Site Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <ul class="nav nav-pills mb-2" id="accountTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview">General Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Personal Data</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="accountTabsContent">
+            <form asp-action="Edit">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card card-account">
+                                <div class="card-body">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <input type="hidden" asp-for="Id" />
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="Name"> </label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                                <input asp-for="Name" type="text" class="form-control">
+                                                <span asp-validation-for="Name" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="LastName"></label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                                <input asp-for="LastName" type="text" class="form-control">
+                                                <span asp-validation-for="LastName" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Birthday"> </label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">calendar</i>
+                                            </div>
+                                            <input asp-for="Birthday" type="month" class="form-control">
+                                            <span asp-validation-for="Birthday" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Biografy"> </label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">business</i>
+                                            </div>
+                                            <input asp-for="Biografy" type="text" class="form-control">
+                                            <span asp-validation-for="Biografy" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Email"></label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">web</i>
+                                            </div>
+                                            <input asp-for="Email" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card card-account">
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="Email"></label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">message</i>
+                                                </div>
+                                                <input asp-for="Email" type="text" class="form-control">
+                                                <span asp-validation-for="Email"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="ZipCode"> </label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">person</i>
+                                                </div>
+                                                <input asp-for="ZipCode" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="Address"> </label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">streetview</i>
+                                                </div>
+                                                <input asp-for="Address" type="text" class="form-control" />
+                                                <span asp-validation-for="Address"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label asp-for="AddressDetails"> </label>
+                                            <div class="input-group input-group--inline">
+                                                <div class="input-group-addon">
+                                                    <i class="material-icons">home</i>
+                                                </div>
+                                                <input asp-for="AddressDetails" type="text" class="form-control">
+                                                <span asp-validation-for="AddressDetails"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PhoneNumber"> </label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">phone</i>
+                                            </div>
+                                            <input asp-for="PhoneNumber" type="text" class="form-control">
+                                            <span asp-validation-for="Biografy"></span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
